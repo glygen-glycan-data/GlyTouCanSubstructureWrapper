@@ -1,6 +1,7 @@
 #!/bin/env python27
 
 import re
+import os
 import sys
 import math
 import time
@@ -21,7 +22,8 @@ class GlyTouCan():
         self._lastrequesttime = 0
         self._lastrequestcount = 0
 
-        self.glygen = open("GlyGen_accessions").read().split()
+        self.glygen = open(os.path.dirname(os.path.abspath(__file__)) + "/GlyGen_accessions").read().split()
+
 
     def _wait(self, delaytime=None):
         if delaytime != None:
